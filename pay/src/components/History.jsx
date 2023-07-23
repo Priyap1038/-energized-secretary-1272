@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Authval } from "../context.jsx/Authcontext";
 
 function History() {
-  const { histry, sethistry } = useContext(Authval);
+  const { histry, sethistry } = useContext(Authval); 
   return (
     <div className="history-page">
       <h2> Available Balance RS 4000</h2>
