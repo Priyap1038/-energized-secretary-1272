@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Authval } from "../context.jsx/Authcontext";
+import { Authval } from "../context/Authcontext";
 
 function History() {
   const { histry, sethistry } = useContext(Authval); 

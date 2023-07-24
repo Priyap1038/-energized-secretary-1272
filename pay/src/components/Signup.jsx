@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom"
+import { useState } from "react";
 
 function Signup() {
 
@@ -38,6 +39,7 @@ function Signup() {
      if(userdata){
        userdata.push(obj)
        localStorage.setItem("logoutdata",JSON.stringify(userdata));
+       alert("Signu success")
      }
      else{
      localStorage.setItem("logoutdata",JSON.stringify([obj]));
@@ -61,7 +63,7 @@ function Signup() {
         onChange={(e)=>handleMail(e)}/>
             <input className="btn" type="password" placeholder="password"  aria-label="Search"
         onChange={(e)=>handlePass(e)}/>
-            <button className="btn" type="submit"> <i class="fa-regular fa-user"></i> Sign up</button>
+            <button className="btn" type="submit" onClick={handleSignUp}> <i class="fa-regular fa-user"></i> Sign up</button>
             <p>Already have an account <Link to="/login">Login</Link></p>
           </form>
         </div>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import paytm_data from "../paytm_db.json.json";
-import { Authval } from "../context.jsx/Authcontext";
+import { Authval } from "../context/Authcontext";
 
 function Sendmoney() {
   let { id } = useParams();

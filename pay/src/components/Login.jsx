@@ -1,6 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import {Authval} from "../context/Authcontext"
+import { useState, useContext} from "react";
+
 
 function Login() {
 
@@ -8,6 +10,8 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const {userlogin,setuserlogin} = useContext(Authval);
+
+  const navi=useNavigate()
 
   const handleemail = (e) => {
     setEmail(e.target.value);
@@ -22,10 +26,13 @@ function Login() {
     let userdata = JSON.parse(localStorage.getItem("logoutdata"));
     // let checkval;
     if (userdata) {
-      let checkval = userdata.find((ele) => ele.mail == email && ele.pass == password);
+      let checkval = userdata.find((ele) => ele.mail === email && ele.pass === password);
       if (checkval) {
         console.log(checkval);
         setuserlogin(checkval)
+        alert("login successfull")
+    navi("/")
+
       }
       else{
       alert('user does not exist please sign up')
